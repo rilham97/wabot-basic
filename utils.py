@@ -1,4 +1,3 @@
-
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "jokes-vgatfg-f95dc24702b3.json"
 
@@ -13,12 +12,7 @@ def detect_intent_from_text(text, session_id, language_code='en'):
     response = dialogflow_session_client.detect_intent(session=session, query_input=query_input)
     return response.query_result
 
+
 def fetch_reply(query, session_id):
-    response = detect_intent_from_text(query, session_id)
-    return response.fulfillment_text
-#
-#response.fulfillment_text
-#
-#response.intent.display_name
-#
-#response.intent_detection_confidence
+	response = detect_intent_from_text(query,session_id)
+	return response.fulfillment_text
